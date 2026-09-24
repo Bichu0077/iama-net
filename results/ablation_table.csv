@@ -1,0 +1,2 @@
+Config,Preprocessing,Attention,Seed,Precision,Recall,F1,mAP@0.5,FPS
+M1 (Baseline),No,No,42,0.7101,0.6898,0.6998,0.7527,59.1

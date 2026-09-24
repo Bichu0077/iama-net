@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# PyTorch / Model weights (large binaries)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.bin
+
+# Training runs & checkpoints (keep folder tracked via .gitkeep)
+runs/*
+!runs/.gitkeep
+
+# Datasets (large image corpora; reproducible via data/download_datasets.py)
+data/NEU-DET/
+data/NEU-DET_preprocessed/
+data/GC10-DET/
+data/raw_*/
+data/**/*.cache
+*.cache
+
+# Keep essential data scripts, configs, and visual verification samples
+!data/download_datasets.py
+!data/convert_to_yolo.py
+!data/__init__.py
+!data/.gitkeep
+!data/samples_annotated/
+
+# Keep result CSVs, markdown summaries, and .gitkeeps
+!results/.gitkeep
+!results/*.csv
+!results/*.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*~

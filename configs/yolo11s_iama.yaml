@@ -1,0 +1,54 @@
+# IAMA-Net config: YOLO11s + ECA_SpatialAttn on F3, F4, F5
+# Used for M3 (attention only) and M4 (full IAMA-Net) ablation configs
+#
+# Architecture changes vs baseline:
+#   - ECA_SpatialAttn inserted after each backbone feature output (F3, F4, F5)
+#   - These are ADDITIONAL to the built-in C2PSA at layer 10 (deepest scale only)
+#   - ECA_SpatialAttn doesn't change channel dimensions (c_out = c_in)
+#
+# Layer index reference (with attention blocks inserted):
+#   Backbone: 0-10 same as baseline, plus attention at 11 (on F3), 12 (on F4), 13 (on F5)
+#   Neck/Head: layers 14+ adjusted for the 3 extra layers
+
+# Parameters
+nc: 6  # NEU-DET: crazing, inclusion, patches, pitted_surface, rolled-in_scale, scratches
+scales:
+  s: [0.50, 0.50, 1024]
+
+# YOLO11s backbone + ECA_SpatialAttn on each scale
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]]            # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]]           # 1-P2/4
+  - [-1, 2, C3k2, [256, False, 0.25]]    # 2
+  - [-1, 1, Conv, [256, 3, 2]]           # 3-P3/8
+  - [-1, 2, C3k2, [512, False, 0.25]]    # 4 = F3 (P3 features)
+  - [-1, 1, ECA_SpatialAttn, [512]]      # 5 = F3' (attention on P3) ★ NEW
+  - [-1, 1, Conv, [512, 3, 2]]           # 6-P4/16
+  - [-1, 2, C3k2, [512, True]]           # 7 = F4 (P4 features)
+  - [-1, 1, ECA_SpatialAttn, [512]]      # 8 = F4' (attention on P4) ★ NEW
+  - [-1, 1, Conv, [1024, 3, 2]]          # 9-P5/32
+  - [-1, 2, C3k2, [1024, True]]          # 10
+  - [-1, 1, SPPF, [1024, 5]]             # 11
+  - [-1, 2, C2PSA, [1024]]               # 12 = F5 (with C2PSA, built-in)
+  - [-1, 1, ECA_SpatialAttn, [1024]]     # 13 = F5' (attention on P5) ★ NEW
+
+# YOLO11s head (FPN + PANet) — indices adjusted for 3 extra layers
+head:
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]   # 14
+  - [[-1, 8], 1, Concat, [1]]             # 15: cat with F4' (attended P4)
+  - [-1, 2, C3k2, [512, False]]           # 16
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]   # 17
+  - [[-1, 5], 1, Concat, [1]]             # 18: cat with F3' (attended P3)
+  - [-1, 2, C3k2, [256, False]]           # 19 (P3/8-small)
+
+  - [-1, 1, Conv, [256, 3, 2]]            # 20
+  - [[-1, 16], 1, Concat, [1]]            # 21: cat head P4
+  - [-1, 2, C3k2, [512, False]]           # 22 (P4/16-medium)
+
+  - [-1, 1, Conv, [512, 3, 2]]            # 23
+  - [[-1, 13], 1, Concat, [1]]            # 24: cat with F5' (attended P5)
+  - [-1, 2, C3k2, [1024, True]]           # 25 (P5/32-large)
+
+  - [[19, 22, 25], 1, Detect, [nc]]       # 26: Detect(P3, P4, P5)

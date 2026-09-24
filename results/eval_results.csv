@@ -1,0 +1,2 @@
+weights,Precision,Recall,F1,mAP@0.5,FPS
+iama-net\runs\M1_baseline_seed42_20260924_195541\weights\best.pt,0.7101,0.6898,0.6998,0.7527,59.1
