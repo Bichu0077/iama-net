@@ -1,2 +1,6 @@
 weights,Precision,Recall,F1,mAP@0.5,FPS
-iama-net\runs\M1_baseline_seed42_20260924_195541\weights\best.pt,0.7101,0.6898,0.6998,0.7527,59.1
+iama-net\runs\M1_baseline_seed42_20260924_195541\weights\best.pt,0.7101,0.6898,0.6998,0.7527,59.5
+iama-net\runs\m3_aligned_init_seed42.pt,0.7114,0.6907,0.7009,0.7608,57.2
+iama-net\runs\M2_aligned_seed42\weights\best.pt,0.6912,0.6924,0.6918,0.7444,51.6
+iama-net\runs\M3_aligned_seed42\weights\best.pt,0.6721,0.7082,0.6897,0.7484,44.4
+iama-net\runs\M4_aligned_seed42\weights\best.pt,0.6686,0.6815,0.6750,0.7333,43.5

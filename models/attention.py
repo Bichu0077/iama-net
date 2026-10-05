@@ -34,7 +34,10 @@ class ECA(nn.Module):
         k = max(k, 3)  # Minimum kernel size of 3
 
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
-        self.conv = nn.Conv1d(1, 1, kernel_size=k, padding=k // 2, bias=False)
+        self.conv = nn.Conv1d(1, 1, kernel_size=k, padding=k // 2, bias=True)
+        # Identity initialization: sigmoid(3.0) ~ 0.95 to preserve pretrained feature magnitude
+        nn.init.zeros_(self.conv.weight)
+        nn.init.constant_(self.conv.bias, 3.0)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -66,8 +69,11 @@ class SpatialAttn(nn.Module):
     def __init__(self, kernel_size: int = 7):
         super().__init__()
         self.conv = nn.Conv2d(
-            2, 1, kernel_size=kernel_size, padding=kernel_size // 2, bias=False
+            2, 1, kernel_size=kernel_size, padding=kernel_size // 2, bias=True
         )
+        # Identity initialization: sigmoid(3.0) ~ 0.95 to preserve pretrained feature magnitude
+        nn.init.zeros_(self.conv.weight)
+        nn.init.constant_(self.conv.bias, 3.0)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:

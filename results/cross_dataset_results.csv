@@ -1,0 +1,5 @@
+Config,Weights,Protocol,mAP@0.5,Precision,Recall,F1
+M1,C:\Users\bichu\OneDrive\Documents\Desktop\IIIT Kottayam 2023-2027\SEM 7\Computer Vision\Project\iama-net\runs\M1_baseline_seed42_20260924_195541\weights\best.pt,class-agnostic (test),0.0311,0.0856,0.0956,0.0903
+M2,C:\Users\bichu\OneDrive\Documents\Desktop\IIIT Kottayam 2023-2027\SEM 7\Computer Vision\Project\iama-net\runs\M2_aligned_seed42\weights\best.pt,class-agnostic (test),0.0281,0.1059,0.082,0.0924
+M3,C:\Users\bichu\OneDrive\Documents\Desktop\IIIT Kottayam 2023-2027\SEM 7\Computer Vision\Project\iama-net\runs\M3_aligned_seed42\weights\best.pt,class-agnostic (test),0.0287,0.0891,0.082,0.0854
+M4,C:\Users\bichu\OneDrive\Documents\Desktop\IIIT Kottayam 2023-2027\SEM 7\Computer Vision\Project\iama-net\runs\M4_aligned_seed42\weights\best.pt,class-agnostic (test),0.0466,0.1657,0.0792,0.1072

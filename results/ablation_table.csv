@@ -1,2 +1,5 @@
-Config,Preprocessing,Attention,Seed,Precision,Recall,F1,mAP@0.5,FPS
-M1 (Baseline),No,No,42,0.7101,0.6898,0.6998,0.7527,59.1
+Config,Description,mAP@0.5,Precision,Recall,F1,FPS
+M1,Baseline YOLOv11s,0.7527,0.7101,0.6898,0.6998,59.5
+M2,YOLOv11s + CLAHE/Bilateral,0.7444,0.6912,0.6924,0.6918,51.6
+M3,YOLOv11s + ECA/SpatialAttn,0.7484,0.6721,0.7082,0.6897,44.4
+M4,Full IAMA-Net,0.7333,0.6686,0.6815,0.675,43.5

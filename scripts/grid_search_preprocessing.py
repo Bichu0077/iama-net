@@ -19,8 +19,12 @@ Usage:
 import cv2
 import numpy as np
 import csv
+import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 
 def compute_metrics(original: np.ndarray, processed: np.ndarray) -> Dict[str, float]:
@@ -165,8 +169,8 @@ def run_grid_search(
 
 
 if __name__ == "__main__":
-    val_dir = Path("iama-net/data/NEU-DET/images/val")
-    csv_out = Path("iama-net/results/preprocessing_grid_search.csv")
-    vis_dir = Path("iama-net/results/preprocessing_comparisons")
+    val_dir = PROJECT_ROOT / "data" / "NEU-DET" / "images" / "val"
+    csv_out = PROJECT_ROOT / "results" / "preprocessing_grid_search.csv"
+    vis_dir = PROJECT_ROOT / "results" / "preprocessing_comparisons"
     run_grid_search(val_dir, csv_out, vis_dir)
 

@@ -16,9 +16,9 @@ def illumination_normalize(
     img: np.ndarray,
     clip_limit: float = 2.0,
     tile_grid: Tuple[int, int] = (8, 8),
-    d: int = 9,
-    sigma_color: float = 75.0,
-    sigma_space: float = 75.0,
+    d: int = 5,
+    sigma_color: float = 50.0,
+    sigma_space: float = 50.0,
 ) -> np.ndarray:
     """Apply CLAHE on L-channel of LAB space, then bilateral filter.
 
@@ -46,9 +46,9 @@ def preprocess_dataset(
     dst_dir: Path,
     clip_limit: float = 2.0,
     tile_grid: Tuple[int, int] = (8, 8),
-    d: int = 9,
-    sigma_color: float = 75.0,
-    sigma_space: float = 75.0,
+    d: int = 5,
+    sigma_color: float = 50.0,
+    sigma_space: float = 50.0,
 ) -> int:
     """Apply illumination normalization to all images in src_dir, save to dst_dir.
 

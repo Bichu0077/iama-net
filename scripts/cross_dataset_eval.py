@@ -28,6 +28,7 @@ def cross_dataset_eval(
     imgsz: int = 640,
     batch_size: int = 8,
     device: str = "0",
+    split: str = "test",
     output_dir: str = None,
 ) -> dict:
     """Evaluate NEU-DET-trained model on GC10-DET (class-agnostic).
@@ -44,6 +45,7 @@ def cross_dataset_eval(
         imgsz: Image size.
         batch_size: Batch size.
         device: Device string.
+        split: Dataset split to evaluate on ('test' or 'val').
         output_dir: Directory to save results.
 
     Returns:
@@ -53,7 +55,7 @@ def cross_dataset_eval(
 
     print(f"\nCross-dataset evaluation (class-agnostic)")
     print(f"Model: {weights}")
-    print(f"Eval data: {gc10_data_yaml}")
+    print(f"Eval data: {gc10_data_yaml} (split: {split})")
     print(f"Protocol: All classes collapsed to 'defect'")
     print(f"No fine-tuning performed.\n")
 
@@ -66,6 +68,7 @@ def cross_dataset_eval(
         imgsz=imgsz,
         batch=batch_size,
         device=device,
+        split=split,
         verbose=True,
         # single_cls=True will treat all classes as one 'defect' class
         single_cls=True,
@@ -78,7 +81,7 @@ def cross_dataset_eval(
 
     metrics = {
         "weights": weights,
-        "Protocol": "class-agnostic (single_cls)",
+        "Protocol": f"class-agnostic ({split})",
         "Precision": round(precision, 4),
         "Recall": round(recall, 4),
         "F1": round(f1, 4),
@@ -92,9 +95,10 @@ def cross_dataset_eval(
     if output_dir:
         out_path = Path(output_dir) / "cross_dataset_results.csv"
         out_path.parent.mkdir(parents=True, exist_ok=True)
+        write_header = not out_path.exists() or out_path.stat().st_size == 0
         with open(out_path, 'a', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=metrics.keys())
-            if out_path.stat().st_size == 0:
+            if write_header:
                 writer.writeheader()
             writer.writerow(metrics)
         print(f"Results saved to: {out_path}")
@@ -109,6 +113,8 @@ if __name__ == "__main__":
     parser.add_argument("--imgsz", type=int, default=640)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--device", type=str, default="0")
+    parser.add_argument("--split", type=str, choices=["val", "test"], default="test",
+                        help="Dataset split to evaluate on ('val' or 'test', default: test)")
     parser.add_argument("--output-dir", type=str, default="results")
     args = parser.parse_args()
 
@@ -118,5 +124,6 @@ if __name__ == "__main__":
         imgsz=args.imgsz,
         batch_size=args.batch_size,
         device=args.device,
+        split=args.split,
         output_dir=args.output_dir,
     )
