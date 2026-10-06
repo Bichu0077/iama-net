@@ -1,0 +1,25 @@
+{
+  "finished": "2026-10-06T06:43:29",
+  "steps": {
+    "wait_phase2_training": {
+      "status": "completed",
+      "at": "2026-10-06T01:28:21"
+    },
+    "phase2_eval": {
+      "status": "completed",
+      "at": "2026-10-06T02:10:20",
+      "rc": 0,
+      "minutes": 42.0
+    },
+    "phase3_training": {
+      "status": "completed",
+      "at": "2026-10-06T05:19:22"
+    },
+    "phase3_eval": {
+      "status": "completed",
+      "at": "2026-10-06T06:43:29",
+      "rc": 0,
+      "minutes": 84.1
+    }
+  }
+}

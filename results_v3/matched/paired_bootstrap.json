@@ -1,0 +1,5 @@
+[
+  ["neu", "raw", "pp", "test", "all", false, "NEU-DET test, matched protocol (A raw inputs vs B preprocessed inputs)"],
+  ["gc10", "raw", "raw", "all", "all", true, "GC10 all 2300 images, matched protocol, raw inputs"],
+  ["gc10", "raw", "raw", "all", "test", true, "GC10 test split (230), matched protocol, raw inputs"]
+]

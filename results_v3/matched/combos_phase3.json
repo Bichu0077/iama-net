@@ -1,0 +1,19 @@
+[
+  ["M3se", "neu", "raw", "test", true],
+  ["M3se", "gc10", "raw", "test", true],
+  ["M3se", "gc10", "raw", "all", true],
+  ["M3se", "gc10", "raw", "all_perclass", true],
+  ["M3cbam", "neu", "raw", "test", true],
+  ["M3cbam", "gc10", "raw", "test", true],
+  ["M3cbam", "gc10", "raw", "all", true],
+  ["M3cbam", "gc10", "raw", "all_perclass", true],
+  ["M2gray", "neu", "gray", "test", true],
+  ["M2gray", "gc10", "raw", "test", true],
+  ["M2gray", "gc10", "raw", "all", true],
+  ["M1m", "neu", "pp", "test", false],
+  ["M1m", "gc10", "pp", "test", false],
+  ["M1m", "gc10", "pp", "all", false],
+  ["M3m", "neu", "pp", "test", false],
+  ["M3m", "gc10", "pp", "test", false],
+  ["M3m", "gc10", "pp", "all", false]
+]

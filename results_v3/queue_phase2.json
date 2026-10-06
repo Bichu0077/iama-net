@@ -1,0 +1,6 @@
+[
+  {"variant": "M1", "seed": 0, "epochs": 100},
+  {"variant": "M2", "seed": 0, "epochs": 100},
+  {"variant": "M3", "seed": 0, "epochs": 100},
+  {"variant": "M4", "seed": 0, "epochs": 100}
+]

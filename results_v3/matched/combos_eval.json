@@ -1,0 +1,27 @@
+[
+  ["M1m", "neu", "raw", "test", true],
+  ["M2m", "neu", "pp", "test", true],
+  ["M3m", "neu", "raw", "test", true],
+  ["M4m", "neu", "pp", "test", true],
+  ["M2m", "neu", "raw", "test", false],
+  ["M4m", "neu", "raw", "test", false],
+
+  ["M1m", "gc10", "raw", "test", true],
+  ["M2m", "gc10", "raw", "test", true],
+  ["M3m", "gc10", "raw", "test", true],
+  ["M4m", "gc10", "raw", "test", true],
+  ["M1m", "gc10", "raw", "all", true],
+  ["M2m", "gc10", "raw", "all", true],
+  ["M3m", "gc10", "raw", "all", true],
+  ["M4m", "gc10", "raw", "all", true],
+  ["M1m", "gc10", "raw", "all_perclass", true],
+  ["M2m", "gc10", "raw", "all_perclass", true],
+  ["M3m", "gc10", "raw", "all_perclass", true],
+  ["M4m", "gc10", "raw", "all_perclass", true],
+  ["M2m", "gc10", "pp", "all", false],
+  ["M4m", "gc10", "pp", "all", false],
+  ["M2m", "gc10", "pp", "test", false],
+  ["M4m", "gc10", "pp", "test", false],
+  ["M2m", "gc10", "pp", "all_perclass", false],
+  ["M4m", "gc10", "pp", "all_perclass", false]
+]

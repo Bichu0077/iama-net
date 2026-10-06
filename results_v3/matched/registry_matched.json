@@ -1,0 +1,6 @@
+{
+  "M1m": "runs_v3/M1_matched_seed0/weights/best.pt",
+  "M2m": "runs_v3/M2_matched_seed0/weights/best.pt",
+  "M3m": "runs_v3/M3_matched_seed0/weights/best.pt",
+  "M4m": "runs_v3/M4_matched_seed0/weights/best.pt"
+}

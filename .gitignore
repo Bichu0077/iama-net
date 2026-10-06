@@ -29,6 +29,9 @@ runs/*
 data/NEU-DET/
 data/NEU-DET_preprocessed/
 data/GC10-DET/
+data/GC10-DET_preprocessed_v3/
+data/NEU-DET_gray_clahe/
+data/NEU-DET_lab_nobil/
 data/raw_*/
 data/**/*.cache
 *.cache
@@ -55,3 +58,7 @@ desktop.ini
 .vscode/
 *.swp
 *~
+
+#audit files
+results_v3/audit
+results_v3/logs

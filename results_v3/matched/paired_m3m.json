@@ -1,0 +1,5 @@
+[
+  ["neu", "raw", "raw", "test", "all", false, "NEU-DET test, matched (M1m vs M3m, both raw inputs)"],
+  ["gc10", "raw", "raw", "all", "all", true, "GC10 all 2300 images, matched, raw inputs (M3m vs M1m)"],
+  ["gc10", "raw", "raw", "all", "test", true, "GC10 test split (230), matched, raw inputs (M3m vs M1m)"]
+]

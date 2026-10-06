@@ -1,0 +1,10 @@
+{
+  "M3se": "runs_v3/M3se_matched_seed0/weights/best.pt",
+  "M3cbam": "runs_v3/M3cbam_matched_seed0/weights/best.pt",
+  "M3ca": "runs_v3/M3ca_matched_seed0/weights/best.pt",
+  "M1v8": "runs_v3/M1v8_matched_seed0/weights/best.pt",
+  "M2gray": "runs_v3/M2gray_matched_seed0/weights/best.pt",
+  "M2nobil": "runs_v3/M2nobil_matched_seed0/weights/best.pt",
+  "M1m": "runs_v3/M1_matched_seed0/weights/best.pt",
+  "M3m": "runs_v3/M3_matched_seed0/weights/best.pt"
+}

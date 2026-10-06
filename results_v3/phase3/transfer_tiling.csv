@@ -1,0 +1,5 @@
+model,protocol,metric,point,ci95_low,ci95_high,n_images,B,seed
+M1m,tiled_640_stride640_agnostic_nms0.7,mAP@0.5,0.024393,0.020103,0.032142,2300,1000,20261005
+M1m,tiled_640_stride640_agnostic_nms0.7,mAP@0.5:0.95,0.005959,0.004775,0.00799,2300,1000,20261005
+M4m,tiled_640_stride640_agnostic_nms0.7,mAP@0.5,0.014997,0.009489,0.016753,2300,1000,20261005
+M4m,tiled_640_stride640_agnostic_nms0.7,mAP@0.5:0.95,0.002785,0.001964,0.003632,2300,1000,20261005

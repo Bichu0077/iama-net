@@ -1,0 +1,18 @@
+[
+  ["M1m", "neu", "raw", "test", "all", false],
+  ["M2m", "neu", "pp", "test", "all", false],
+  ["M3m", "neu", "raw", "test", "all", false],
+  ["M4m", "neu", "pp", "test", "all", false],
+  ["M2m", "neu", "raw", "test", "all", false],
+  ["M4m", "neu", "raw", "test", "all", false],
+  ["M1m", "gc10", "raw", "all", "all", true],
+  ["M2m", "gc10", "raw", "all", "all", true],
+  ["M3m", "gc10", "raw", "all", "all", true],
+  ["M4m", "gc10", "raw", "all", "all", true],
+  ["M2m", "gc10", "pp", "all", "all", true],
+  ["M4m", "gc10", "pp", "all", "all", true],
+  ["M1m", "gc10", "raw", "all", "test", true],
+  ["M2m", "gc10", "raw", "all", "test", true],
+  ["M3m", "gc10", "raw", "all", "test", true],
+  ["M4m", "gc10", "raw", "all", "test", true]
+]

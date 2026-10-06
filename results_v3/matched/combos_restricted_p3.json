@@ -1,0 +1,6 @@
+[
+  ["M3se", "raw", "all"],
+  ["M3cbam", "raw", "all"],
+  ["M3se", "raw", "test"],
+  ["M3cbam", "raw", "test"]
+]

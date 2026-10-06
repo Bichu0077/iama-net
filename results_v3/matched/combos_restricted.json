@@ -1,0 +1,12 @@
+[
+  ["M1m", "raw", "all"],
+  ["M2m", "raw", "all"],
+  ["M3m", "raw", "all"],
+  ["M4m", "raw", "all"],
+  ["M2m", "pp", "all"],
+  ["M4m", "pp", "all"],
+  ["M1m", "raw", "test"],
+  ["M2m", "raw", "test"],
+  ["M3m", "raw", "test"],
+  ["M4m", "raw", "test"]
+]
